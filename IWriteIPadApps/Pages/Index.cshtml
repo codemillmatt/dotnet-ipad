@@ -1,0 +1,15 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">I am lazy</h1>
+    <p>And will only use an iPad to write apps from here on out.</p>
+
+    @foreach (var thing in Model.ThingsICanDo)
+    {
+        <p>@thing</p>
+    }
+</div>
