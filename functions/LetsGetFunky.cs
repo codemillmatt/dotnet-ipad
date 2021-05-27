@@ -12,18 +12,18 @@ namespace IWriteIPadApps.Functions
 {
     public static class LetsGetFunky
     {
-        [FunctionName("LetsGetFunky")]
-        public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
-            ILogger log)
-        {
-            string[] thingsICanDo = new string[] { 
-                "Write .NET apps on an IPAD!!", 
-                "Write Azure Functions on an IPAD!!", 
-                "Write blogs on an IPAD!!!" 
-            };
+[FunctionName("LetsGetFunky")]
+public static async Task<IActionResult> Run(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+    ILogger log)
+{
+    string[] thingsICanDo = new string[] { 
+        "Write .NET apps on an IPAD!!", 
+        "Write Azure Functions on an IPAD!!", 
+        "Write blogs on an IPAD!!!" 
+    };
 
-            return new OkObjectResult(thingsICanDo);
-        }
+    return new OkObjectResult(thingsICanDo);
+}
     }
 }
