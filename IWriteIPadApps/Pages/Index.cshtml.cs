@@ -26,11 +26,18 @@ namespace IWriteIPadApps.Pages
 
         public async Task OnGet()
         {
-            var functionUrl = "https://codemillmatt-dotnet-ipad-3v7w-7071.githubpreview.dev/api/LetsGetFunky";
+            try
+            {
+                var functionUrl = "https://codemillmatt-dotnet-ipad-3v7w-7071.githubpreview.dev/api/LetsGetFunky";
 
-            var thingsICanDoJson = await client.GetStringAsync(functionUrl);
+                var thingsICanDoJson = await client.GetStringAsync(functionUrl);
 
-            ThingsICanDo = JsonConvert.DeserializeObject<string[]>(thingsICanDoJson);
+                ThingsICanDo = JsonConvert.DeserializeObject<string[]>(thingsICanDoJson);
+            }
+            catch (Exception ex)
+            {
+                ThingsICanDo = new string[] { ex.ToString() };
+            }
         }
     }
 }

@@ -48,6 +48,25 @@
       }
     },
     {
+      "label": "buildweb",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "type": "process",
+      "dependsOn": "clean",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/IWriteIPadApps"
+      }
+    },
+    {
       "label": "clean release",
       "command": "dotnet",
       "args": [
